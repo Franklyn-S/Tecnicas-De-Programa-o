@@ -3,6 +3,7 @@ Nome: Franklyn Seabra Rogério Bezerra
 Matricula: 397847   Curso: Ciências da computação, UFC
 */
 class Conjunto{
+
 	int tamanho;
 	int[] array;
 
@@ -15,36 +16,41 @@ class Conjunto{
 		if (elementoPertence(e)){
 			return;
 		}
-		int k;
+		int k = 0;
 		for (int i = 0; i < this.tamanho; i++){
-			if (this.array[i] != NULL)
+			if (this.array[i] != -1)
 				k++;
 		}
-		this.array[k] = e;
+		if(k == this.tamanho){
+			System.out.println("Conjunto cheio!");
+		}else{
+			this.array[k] = e;	
+		}
+		
 	}
 
 	public boolean elementoPertence(int e){
 		for (int i = 0; i < this.tamanho; i++){
 			if (array[i] == e)
-				return TRUE;
+				return true;
 		}
-		return FALSE;
+		return false;
 	}
 
 	public boolean conjuntoPertence(Conjunto c){
 		int teste = 0;
 		for (int i = 0; i < c.tamanho; i++) {
 			for (int j = 0; j < this.tamanho; j++) {
-				if (c[i] == this.array[j]) {
+				if (c.array[i] == this.array[j]) {
 					teste = 1;
 				}
 			}
 			if (teste == 0) {
-					return FALSE;
+					return false;
 			}
 			teste = 0;
 		}
-		return TRUE;
+		return true;
 	}
 	public Conjunto uniao(Conjunto A){
 		Conjunto union  = new Conjunto(this.tamanho + A.tamanho);
@@ -58,15 +64,43 @@ class Conjunto{
 	}
 
 	public Conjunto interseccao(Conjunto A){
-		Conjunto union  = new Conjunto(this.tamanho + A.tamanho);
+		int[] vetorAux = new int[this.tamanho];
+		int nRepetidos = 0;
 		for (int i = 0; i < A.tamanho ;i++){
 			for (int j = 0; j<this.tamanho; j++){
 				if(A.array[i] == this.array[j]){
-					union.adicionar(this.array[j]);
+					vetorAux[i] = A.array[i];
+					++nRepetidos;
 				}
 			}
 		}
-		return union;
+		Conjunto intersec  = new Conjunto(this.tamanho - nRepetidos);
+		for (int i = 0; i<intersec.tamanho; ) {
+			intersec.adicionar(vetorAux[i]);
+		}
+		return intersec;
 	}
+
+	//ainda não terminado
+	public Conjunto diference(Conjunto A){
+		Conjunto intersec = this.interseccao(A);
+
+		Conjunto dif = new Conjunto(this.tamanho - intersec.tamanho);
+		boolean teste;
+		for (int i=0; i<this.tamanho; i++) {
+			teste = false;
+			for (int j=0; j<intersec.tamanho; j++) {
+				if(this.array[i] == intersec.array[j]){
+					teste = true;
+				}
+			}
+			if(!teste){
+				dif.adicionar(this.array[i]);
+			}
+		}
+		return dif;
+	}
+
 }
+
 
