@@ -5,7 +5,7 @@ abstract class Figura{
     }//Fim do método desenhar
 
     void mover(float dx, float dy){
-
+    	
     }//Fim do método mover
 
     float calcularArea(Figura f){

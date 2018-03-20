@@ -1,5 +1,17 @@
 class Quadrado extends Figura{
+	float altura;
+	float largura;
+
+	Quadrado(){
+		this.altura = 0;
+		this.largura = 0;
+	}
 	
+	Quadrado(float altura, float largura){
+		this.altura = altura;
+		this.largura = largura;
+	}
+
 	String desenhar(){
     	return ;
     }//Fim do método desenhar

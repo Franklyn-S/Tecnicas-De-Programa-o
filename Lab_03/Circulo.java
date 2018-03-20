@@ -1,5 +1,9 @@
 class Circulo extends Figura{
 	
+	Circulo(){
+
+	}
+
     String desenhar(){
     	return ;
     }//Fim do método desenhar
