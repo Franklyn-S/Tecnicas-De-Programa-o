@@ -1,25 +1,25 @@
-import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.List;
 
 class Conjunto{
 
 	//atributos
-	private ArrayList elementos;
+	Object o[];
+	int t; //tamanho
 
 	//Contrutores
 
 	public Conjunto(int tamanho){
-		ArrayList A = new ArrayList(tamanho);
-		this.elementos = A;
+		Object o = new Object(tamanho);
+		this.t = tamanho ;
 	}
 
 	//metodos
-	public void inserir(int valor){
-		if(pertence(valor)){
-			return;
+	public void inserir(Object valor){
+		if(!pertence(valor)){
+			for (int i=0 ;i<this.tamanho ;i++) {
+			//a partir daqui				
+			}
 		}
-		(this.elementos).add(valor);
+		
 	}
 
 	public boolean pertence(int valor){
