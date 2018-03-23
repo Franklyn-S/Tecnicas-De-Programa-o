@@ -110,5 +110,33 @@ class Main{
 			System.out.println("Elemento "+ m + "eh" + diferenca.getElemento(m));
 		}
 
+		//Teste da Lei de Morgan - Questão 5
+		System.out.println("=========Teste da Lei de Morgan - Questão 5=========");
+		Conjunto universo = new Conjunto(50);
+
+
+		for(int f = 1; f<=universo.getTamanho(); f++){//Preenchendo conjunto universo
+			universo.adicionar(i);
+			//System.out.println(universo.array[i]);
+		}
+		//Ida da Lei de Morgan ~(AuB) = ~A i ~B, onde A = Conj1 , B = conj2, u = uniao e i = interseccao
+		Conjunto u = conj1.uniao(conj2); //AuB
+		Conjunto idaTeste1 = universo.diference(u); //~(AuB)
+
+		Conjunto bA = universo.diference(conj1); //bA = ~A
+		Conjunto bB = universo.diference(conj2); //bB = ~B
+		Conjunto idaTeste2 = bA.interseccao(bA); //~A i ~B
+
+		if(idaTeste1.conjuntoPertence(idaTeste2) && idaTeste2.conjuntoPertence(idaTeste1))// verifica se ~(AuB) = ~A i ~B
+			System.out.println("Ida provada!");
+
+		//Volta da Lei de Morgan ~(AiB) = ~A u ~B, onde A = Conj1 , B = conj2, u = uniao e i = interseccao
+		Conjunto i = conj1.interseccao(conj2); //AiB
+		Conjunto voltaTeste1 = universo.diference(i);// ~(AiB)
+
+		Conjunto voltaTeste2 = bA.uniao(bB); //~A u ~B
+
+		if(voltaTeste2.conjuntoPertence(voltaTeste1) && voltaTeste1.conjuntoPertence(voltaTeste2))// verifica se ~(AiB) = ~A u ~B
+			System.out.println("Volta provada!");
 	}
 }

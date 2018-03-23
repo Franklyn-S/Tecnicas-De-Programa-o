@@ -1,29 +1,28 @@
 /*
 Franklyn Seabra Rogério Bezerra 397847
-Este foi feito por ele e recebeu acréscimos de Gustavo Sousa e foi novamente finalizado por mim
+Este foi feito inicialmente por ele e recebeu acréscimos de Gustovo Sousa
 */
-
-class Conjunto{ //classe Generica
+class ConjuntoInt{
 	int ultimo = 0; //indice do atual ultimo elemento do conjunto
-	private int tamanho;//tamanho do conjunto
-	Object[] array; //array de objetos
+	int tamanho;//tamanho do conjunto
+	int[] array;
 
-	Conjunto(int t){
+	ConjuntoInt(int t){
 		this.tamanho = t;
-		array = new Object[t];
+		array = new int[t];
 	}
 
 	public int getTamanho(){
 		return this.tamanho;
 	}
 
-	public Object getElemento(int indice){
+	public int getElemento(int indice){
 		return this.array[indice];   
 	}
 
-	public void adicionar(Object e){ //elemento
+	public void adicionar(int e){ //elemento
 		if (!elementoPertence(e)){   
-			if (this.tamanho == this.ultimo) {
+			if (this.tamanho == this.ultimo +1) {
 				//System.out.println("Conjunto Cheio!");
 			}else{
 				this.array[this.ultimo] = e;
@@ -36,7 +35,7 @@ class Conjunto{ //classe Generica
 		
 	}
 
-	public boolean elementoPertence(Object e){
+	public boolean elementoPertence(int e){
 		for (int i = 0; i < this.ultimo; i++){
 			if (array[i] == e)
 				return true;
@@ -71,7 +70,7 @@ class Conjunto{ //classe Generica
 	}
 
 	public Conjunto interseccao(Conjunto A){
-		Object[] vetorAux = new Object[this.tamanho];
+		int[] vetorAux = new int[this.tamanho];
 		int nRepetidos = 0;
 		for (int i = 0; i < A.ultimo ;i++){
 			for (int j = 0; j<this.ultimo; j++){
@@ -88,7 +87,16 @@ class Conjunto{ //classe Generica
 		return intersec;
 	}
 
+
 	public Conjunto diference(Conjunto A){
+		for(int a = 0;a<A.tamanho;a++){
+			System.out.println(A.array[a]);
+		}
+
+		for(int b = 0;b<this.tamanho;b++){
+			System.out.println(this.array[b]);
+		}
+
 		Conjunto intersec = this.interseccao(A);
 
 		Conjunto dif = new Conjunto(this.tamanho - intersec.tamanho);
@@ -101,6 +109,7 @@ class Conjunto{ //classe Generica
 				}
 			}
 			if(!teste){
+				System.out.println("elemento diferente:"+this.array[i]+"\n");
 				dif.adicionar(this.array[i]);
 			}
 		}
