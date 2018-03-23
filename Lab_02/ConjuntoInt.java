@@ -4,7 +4,7 @@ Este foi feito inicialmente por ele e recebeu acréscimos de Gustovo Sousa
 */
 class ConjuntoInt{
 	int ultimo = 0; //indice do atual ultimo elemento do conjunto
-	int tamanho;//tamanho do conjunto
+	private int tamanho;//tamanho do conjunto
 	int[] array;
 
 	ConjuntoInt(int t){
@@ -115,5 +115,18 @@ class ConjuntoInt{
 		}
 		return dif;
 	}
+	//par ordenado
+	public ParOrdenado[] produtoCartesiano(Conjunto A){
+		int tamanho = this.getTamanho()*A.getTamanho();
+		ParOrdenado[] produto = new ParOrdenado[tamanho];
+		int posicao = 0;
+		for(int i = 0; i<this.getTamanho(); i++){
+			for (int j = 0; j<A.getTamanho(); j++) {
+				produtos[posicao] = new ParOrdenado(this.array[i], A.array[j]);
+				posicao++
+			}
 
+		}
+	}
+ 
 }
