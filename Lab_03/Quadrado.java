@@ -1,27 +1,19 @@
+import java.lang.Math;
 class Quadrado extends Figura{
-	float altura;
-	float largura;
+	int lado; //tamanho dos lados do quadrado;
 
-	Quadrado(){
-		this.altura = 0;
-		this.largura = 0;
+	Quadrado(int lado){
+		this(0,0,lado);
 	}
 	
-	Quadrado(float altura, float largura){
-		this.altura = altura;
-		this.largura = largura;
+	Quadrado(int x, int y, int lado){
+		this.x = x;
+		this.y = y;
+		this.lado = lado;
 	}
 
-	String desenhar(){
-    	return ;
-    }//Fim do método desenhar
-
-    void mover(float dx, float dy){
-
-    }//Fim do método mover
-
-    float calcularArea(Figura f){
-
+    double calcularArea(Figura f){
+    	return Math.pow(lado,2);
     }//Fim do método calcular area;
 
 }//Fim da classe Quadrado

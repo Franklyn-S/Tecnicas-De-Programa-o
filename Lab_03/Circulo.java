@@ -1,19 +1,18 @@
+import java.lang.Math;
 class Circulo extends Figura{
-	
-	Circulo(){
+	int diametro;
 
+    Circulo(int diametro){
+        this(0,0, diametro);
+    }
+
+	Circulo(int x, int y, int diametro){
+        super(x,y);
+        this.diametro = diametro;
 	}
 
-    String desenhar(){
-    	return ;
-    }//Fim do método desenhar
-
-    void mover(float dx, float dy){
-
-    }//Fim do método mover
-
-    float calcularArea(Figura f){
-
+    double calcularArea(Figura f){
+        return (Math.PI*(Math.pow(diametro/2,2)));
     }//Fim do método calcular area;
 
 }//Fim da classe circulo
