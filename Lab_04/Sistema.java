@@ -25,6 +25,8 @@ public class Sistema{
 		}
 	}
 
+	//Esse método recebe o número da conta e o valor as ser creditado, então ele percorre o vetor contas até a achar uma conta com o mesmo número,
+	//depois de achada ele chama o método ceritar da conta.
 	void creditar(int numero_conta, double valor){
 		for(int i = 0;i < posicao; i++){
 			if(contas[i].getNumeroConta() == numero_conta){
@@ -33,6 +35,8 @@ public class Sistema{
 		}			
 	}
 
+	//Esse método recebe o número da conta e o valor as ser debitado, então ele percorre o vetor contas até a achar uma conta com o mesmo número,
+	//depois de achada ele chama o método debitar da conta.
 	void debitar(int numero_conta, double valor){
 		for(int i = 0;i < posicao; i++){
 			if(contas[i].getNumeroConta() == numero_conta){
@@ -41,6 +45,9 @@ public class Sistema{
 		}
 	}
 
+
+	//Esse método percorre o vetor de contas até achar uma conta com o número passad, então ele retorna o saldo daquela conta.
+	//Caso contrário ele retorna -1.
 	double consultarSaldo(int numero_conta){
 		for(int i = 0;i < posicao; i++){
 			if(contas[i].getNumeroConta() == numero_conta){
