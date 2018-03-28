@@ -5,6 +5,7 @@ abstract class Figura{
 	Figura(){
 		this(0,0);
 	}
+	
 	Figura(int x, int y){
 		this.x = x;
 		this.y = y;

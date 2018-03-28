@@ -1,7 +1,7 @@
 abstract class FiguraColorida extends Figura{
 	String cor;
 
-	FiguraColorida(Strin cor){
+	FiguraColorida(String cor){
 		this(0,0,cor);
 	}
 
@@ -10,5 +10,12 @@ abstract class FiguraColorida extends Figura{
 		this.cor = cor;
 	}
 
+	String desenhar(){
+    	return this.toString() + " Cor: " + this.cor; // figura.getClass().getName() + '@' + Integer.toHexString(hashCode())
+    }//Fim do método desenhar
+
+	String desenhar(String cor){
+    	return this.toString() + " Cor: " + cor; // figura.getClass().getName() + '@' + Integer.toHexString(hashCode())
+    }//Fim do método desenhar
 	
 }

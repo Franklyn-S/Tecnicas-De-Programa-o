@@ -1,14 +1,13 @@
 import java.lang.Math;
-class Quadrado extends Figura{
+class Quadrado extends FiguraColorida{
 	int lado; //tamanho dos lados do quadrado;
 
-	Quadrado(int lado){
-		this(0,0,lado);
+	Quadrado(int lado, String cor){
+		this(0,0,lado, cor);
 	}
 	
-	Quadrado(int x, int y, int lado){
-		this.x = x;
-		this.y = y;
+	Quadrado(int x, int y, int lado, String cor){
+		super(x, y, cor);
 		this.lado = lado;
 	}
 
