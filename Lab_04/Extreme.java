@@ -1,23 +1,25 @@
 //Nome: Franklyn Seabra Rogério Bezerra, Matricula: 397847
-public class Extreme extends conta{
+//Nome: Matheus Sousa Correia Matricula: 400501
+public class Extreme extends Conta{
 
 	Extreme(int numero_conta){
-		this(numero_conta, 0.0)
+		this(numero_conta, 0.0);
 	}
 
-	Extreme(int numero_conta, float valor){
+	Extreme(int numero_conta, double valor){
 		super(numero_conta, valor);
 	}
 
-	void creditar(float valor){
-		this.saldo += valor + (0.002);
+	void creditar(double valor){
+		this.saldo += valor + (0.002*valor); //Ele rende um bônus de 0.2% do valor
 	}
 
-	void debitar(float valor){
-		this.saldo -=valor - (0.002);
+	void debitar(double valor){
+		this.saldo -=valor - (0.002*valor); //Ele restitui 0.2% do valor debitado
 	}
 
-	float consultarSaldo(){
-		return this.saldo;
+	@Override
+	public String toString(){
+		return "Conta Extreme\nId:"+this.numero_conta+"\nSaldo da Conta:"+this.saldo;
 	}
 }
