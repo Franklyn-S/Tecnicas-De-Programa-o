@@ -1,5 +1,7 @@
 //Nome: Franklyn Seabra Rogério Bezerra, Matricula: 397847
 //Nome: Matheus Sousa Correia Matricula: 400501
+
+//Polimorfismo de inclusão
 public class Basic extends Conta{
 
 	Basic(int numero_conta){

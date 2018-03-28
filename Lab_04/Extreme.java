@@ -1,5 +1,7 @@
 //Nome: Franklyn Seabra Rogério Bezerra, Matricula: 397847
 //Nome: Matheus Sousa Correia Matricula: 400501
+
+//Polimorfismo de inclusão
 public class Extreme extends Conta{
 
 	Extreme(int numero_conta){
@@ -11,11 +13,11 @@ public class Extreme extends Conta{
 	}
 
 	void creditar(double valor){
-		this.saldo += valor + (0.002*valor); //Ele rende um bônus de 0.2% do valor
+		this.saldo += valor + (0.002*valor); //Rende um bônus de 0.2% do valor creditado
 	}
 
 	void debitar(double valor){
-		this.saldo -=valor - (0.002*valor); //Ele restitui 0.2% do valor debitado
+		this.saldo -=valor - (0.002*valor); //Restitui 0.2% do valor debitado
 	}
 
 	@Override

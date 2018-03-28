@@ -1,5 +1,7 @@
 //Nome: Franklyn Seabra Rogério Bezerra, Matricula: 397847
 //Nome: Matheus Sousa Correia Matricula: 400501
+
+//Polimorfismo de inclusão
 public class Plus extends Conta{
 
 	Plus(int numero_conta){
@@ -11,7 +13,7 @@ public class Plus extends Conta{
 	}
 
 	void creditar(double valor){
-		this.saldo += valor +(0.005*valor);
+		this.saldo += valor +(0.005*valor); //Rende um bônus de 0.5% do valor creditado
 	}
 
 	void debitar(double valor){
