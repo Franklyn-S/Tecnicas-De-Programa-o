@@ -4,10 +4,12 @@
 //Polimorfismo de inclusão
 public class Plus extends Conta{
 
+	//Sobrecarga do construtor
 	Plus(int numero_conta){
 		this(numero_conta, 0.0);
 	}
 	
+	//Sobrecarga do construtor
 	Plus(int numero_conta, double saldo){
 		super(numero_conta, saldo);
 	}

@@ -4,10 +4,12 @@
 //Polimorfismo de inclusão
 public class Extreme extends Conta{
 
+	//Sobrecarga do construtor
 	Extreme(int numero_conta){
 		this(numero_conta, 0.0);
 	}
 
+	//Sobrecarga do construtor
 	Extreme(int numero_conta, double valor){
 		super(numero_conta, valor);
 	}
