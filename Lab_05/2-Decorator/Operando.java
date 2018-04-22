@@ -1,4 +1,3 @@
-//ConcreteComponent
 class Operando implements Expressao{
 	double valor;
 
