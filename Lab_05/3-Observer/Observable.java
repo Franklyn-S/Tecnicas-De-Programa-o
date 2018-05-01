@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-abstract class Observable{
-	List<Observer> observers = new ArrayList();
+import java.util.*;
+class Observable{
+	List<Observer> observers = new ArrayList<Observer>();
 
 	void addObserver(Observer obj){
 		observers.add(obj);
@@ -8,11 +8,11 @@ abstract class Observable{
 	void deleteObserver(Observer obj){
 		observers.remove(obj);
 	}
-	void notifyObservers(){
-		Iterator<Observer> elements = observers.iterator();
+	void notifyObservers(Expressao e){
+		Iterator elements = observers.iterator();
 		while (elements.hasNext()){
-			Object e = elements.next();
-			e.imprimir();
+			Observer o = (Observer) elements.next();
+			o.imprimir(e);
 		}
 	}
 }
